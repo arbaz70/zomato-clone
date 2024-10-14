@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Form</title>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  margin-bottom: 10px;
+}
+input, textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0056b3;
+}
+.success-message {
+  color: green;
+  text-align: center;
+  display: none;
+}
+.error {
+  color: red;
+  margin-top: 5px;
+}
+.back{
+  height: 40px;
+  width: 40px;
+  border: 1px lightgray;
+  background-color: white;
+  font-size: 30px;
+  border-style: dashed;
+  margin-left: 15px;
+}
+.blac{
+  padding: 5px;
+  color: black;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+  <div class="back">
+    <a href="index.html"><ion-icon class="blac" name="arrow-back-outline"></ion-icon></a>
+  </div>
+<div class="container">
+  <h2>Contact Us</h2>
+  <form id="contact-form" onsubmit="return submitForm()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Email address:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone" required>
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" required>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+    <button type="submit">Submit</button>
+    <div class="success-message" id="success-message">Your Message Sent Successfully</div>
+    <div class="error" id="phone-error"></div>
+  </form>
+</div>
+
+<script>
+function submitForm() {
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var phone = document.getElementById('phone').value;
+  var subject = document.getElementById('subject').value;
+  var message = document.getElementById('message').value;
+
+  if (!validatePhone(phone)) {
+    document.getElementById('phone').style.borderColor = 'red';
+    document.getElementById('phone-error').innerText = 'Please fill out this field correctly';
+    return false;
+  } else {
+    document.getElementById('phone').style.borderColor = '#ccc';
+    document.getElementById('phone-error').innerText = '';
+  }
+
+  var formData = {
+    name: name,
+    email: email,
+    phone: phone,
+    subject: subject,
+    message: message
+  };
+
+  // Reset form fields
+  document.getElementById('name').value = '';
+  document.getElementById('email').value = '';
+  document.getElementById('phone').value = '';
+  document.getElementById('subject').value = '';
+  document.getElementById('message').value = '';
+
+  // Display success message
+  document.getElementById('success-message').style.display = 'block';
+  setTimeout(function() {
+    document.getElementById('success-message').style.display = 'none';
+    document.getElementById('contact-form').style.display = 'none';
+  }, 5000);
+
+  // Here you can save the formData to your desired location (e.g., database or local storage)
+  console.log(formData);
+
+  return false; // Prevent form submission
+}
+
+function validatePhone(phone) {
+  // Simple phone number validation (must contain only numbers and be at least 7 digits long)
+  var phoneRegex = /^\d{7,}$/;
+  return phoneRegex.test(phone);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zomato order food online</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="logo.png" alt="" />
+      </div>
+      <ul>
+        <li><a href="">Inventor Relations</a></li>
+        <li><a href="">Add resturant</a></li>
+        <li><a href="">Login</a></li>
+        <li><a href="">Signup</a></li>
+      </ul>
+    </header>
+    <main>
+       use background img as background  
+      <img src="background.png" alt="" />
+      <img src="logo.png" alt="" />
+      <p>Discover the best food & drinks in Bhuj</p>
+      <input placeholder="Search for resturant,cuisine or a dish" />
+      <section>
+         write some thing about the food delivery and add html elements here  
+
+      </section>
+    </main>
+    <footer>copyright &copy; | All right reserved</footer>
+    <script src="js/script.js"></script>
+  </body>
+</html> -->
+  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Order Food Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/img/logo.png" alt="Zomato Logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Inventor Relations</a></li>
+                <li><a href="#">Add Restaurant</a></li>
+                <li><a href="form.html">Login</a></li>
+                <li><a href="form.html">Signup</a></li>
+            </ul>
+            <div class="menu-btn">
+                <div class="menu-bar"></div>
+                <div class="menu-bar"></div>
+                <div class="menu-bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Section with Background Image -->
+    <section class="search-section">
+        <div class="content">
+            <img class="main-logo" src="/img/logo.png" alt="Logo">
+            <p>Discover the best food & drinks in Bhuj</p>
+            <input type="text" placeholder="Search for restaurant, cuisine or a dish">
+        </div>
+    </section>
+
+
+    <!-- Order Online Section -->
+    <section class="order-online">
+        <div class="order-card" onclick="redirectToPage('order.html')">
+            <img src="img/dish1.jpeg" alt="Order Food" class="order-image">
+            <div class="order-info">
+                <h3>Order Online</h3>
+                <p>Stay home and order to your doorstep</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Localities Section -->
+    <section class="popular-localities">
+        <h2>Popular localities in and around Bhuj</h2>
+        <div class="locality-card" onclick="redirectToPage('bhuj.html')">
+            <p><strong>Bhuj Locality</strong></p>
+            <p>253 places</p>
+        </div>
+    </section>
+
+
+    <!-- Featured Restaurants Section -->
+
+
+<!-- Phone section -->
+<section class="get-app-section">
+    <div class="container">
+        <div class="app-left">
+            <img src="img/phone.jpg" alt="Mobile App">
+        </div>
+        <div class="app-right">
+            <h2>Get the Zomato App</h2>
+            <p>We have got everything you need to enjoy your meal at home or on the go. Download the app for faster ordering, exclusive discounts, and more!</p>
+            
+            <!-- Option to select Email or Phone -
+            //<div class="contact-option">
+                <label for="contact-method">Choose how to receive the app link:</label>
+                <select id="contact-method">
+                    <option value="email">Email</option>
+                    <option value="phone">Phone</option>
+                </select>//
+            </div > -->
+            
+            <input id="Basic" type="radio" name="Subscrption" value="email" />
+          <label for="basic"><b> Email </b></label>
+            <input id="phone" type="radio" name="Subscrption" value="phone" />
+          <label for="basic"><b>phone</b></label>
+
+<br>
+<br>
+            <!-- Input for Email/Phone -->
+            <div class="contact-input">
+                <input type="text" id="contact-input" placeholder="Enter your email or phone number">
+            </div>
+            
+            <!-- Share App Link Button -->
+            <button class="share-link-btn">Share App Link</button>
+            
+            <!-- Google Play & Apple Store Buttons -->
+            <div class="store-buttons">
+                <a href="#"><img src="img/googleplay.jpg" alt="Get it on Google Play"></a>
+                <a href="#"><img src="img/appstore.jpg" alt="Download on the App Store"></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="explore-options">
+    <h2>Explore options near me</h2>
+    
+     <!--Popular Cuisines Dropdown -->
+    <div class="dropdown-box">
+        <div class="dropdown-header" onclick="toggleDropdown('cuisines')">
+            <span>Popular cuisines near me</span>
+            <span class="dropdown-arrow">▼</span>
+        </div>
+        <div id="cuisines" class="dropdown-content">
+            <p>Italian, Chinese, Indian, Mexican, Thai, Japanese</p>
+        </div>
+    </div> 
+
+    <!--Popuplar resturant near me -->
+    <div class="dropdown-box">
+        <div class="dropdown-header" onclick="toggleDropdown('restaurants')">
+            <span>Popular restaurant types near me</span>
+            <span class="dropdown-arrow">▼</span>
+        </div>
+        <div id="restaurants" class="dropdown-content">
+            <p>Cafes, Fast Food, Casual Dining, Fine Dining Bakeries near me, Beverage Shops near me, Bhojanalya near me, Cafés near me,Casual Dining near me , Dessert Parlors near me, Dhabas near me, Fine Dining near me, Food Courts near me, Food Trucks near me, Kiosks near me, Paan Shop near me, Quick Bites near me, Sweet Shops near me</p>
+        </div>
+    </div> 
+
+      <!--Cities We Deliver To Dropdown -->
+    <div class="dropdown-box">
+        <div class="dropdown-header" onclick="toggleDropdown('cities')">
+            <span>Cities we deliver to</span>
+            <span class="dropdown-arrow">▼</span>
+        </div>
+        <div id="cities" class="dropdown-content">
+            <p>Mumbai, Delhi, Bangalore, Hyderabad, Pune, Kolkata , Delhi NCR , Kolkata , Mumbai,BengaluruPune,Hyderabad , Chennai , Lucknow, Kochi , Jaipur , Ahmedabad , Chandigarh , Goa , Indore , GangtokNashik , Ooty , Shimla , Ludhiana , Guwahati , Amritsar , Kanpur , Allahabad , Aurangabad , Bhopal , Ranchi , Visakhapatnam , Bhubaneswar , Coimbatore , Mangalore ,Vadodara , Nagpur , Agra , DehradunMysore , Puducherry , Surat , Varanasi , Patna , Udaipur , Srinagar , Khajuraho , Neemrana , Cuttack , Trivandrum , HaridwarLeh , Pushkar , Rajkot , Madurai , Kozhikode , Alappuzha , Thrissur , Manipal , Vijayawada , Jodhpur , Kota , Ajmer , Mussoorie , Rishikesh , Jalandhar , Jammu ,  ManaliAll delivery cities</p>
+        </div>
+    </div>
+</section> 
+
+
+
+
+<footer>
+    <div class="footer-content">
+        <!-- Left section with Logo and About Zomato -->
+        <div class="footer-left">
+            <div class="about-section">
+                <img src="img/logo.png" alt="Zomato Logo" class="footer-logo">
+                <ul>
+                    <strong>About Zomato</strong>
+                    <br>
+                    <br>
+                    <li>Who We Are</li>
+                    <li>Blog</li>
+                    <li>Work With Us</li>
+                    <li>Investor Relations</li>
+                    <li>Report Fraud</li>
+                    <li>Press Kit</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+
+            <!-- Zomaverse, For Restaurants, Learn More -->
+            <div class="footer-column">
+                <ul>
+                    <li><strong>Zomaverse</strong></li>
+                    <li>Zomato</li>
+                    <li>Blinkit</li>
+                    <li>Feeding India</li>
+                    <li>Hyperpure</li>
+                    <li>Zomato Live</li>
+                    <li>Zomaland</li>
+                    <li>Weather Union</li>
+                </ul>
+
+                <ul>
+                    <li><strong>For Restaurants</strong></li>
+                    <li>Partner With Us</li>
+                    <li>Apps For You</li>
+                </ul>
+
+                <ul>
+                    <li><strong>Learn More</strong></li>
+                    <li>Privacy</li>
+                    <li>Security</li>
+                    <li>Terms</li>
+                    <li>Sitemap</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right section with country and language dropdowns, social links, and app store buttons 
+        <div class="footer-right">
+            <div class="dropdown-section">
+                <div class="dropdown">
+                    <label for="countries">Countries:</label>
+                    <select id="countries">
+                        <option value="india">India</option>
+                        <option value="usa">USA</option>
+                        <option value="uk">UK</option>
+                    </select>
+                </div>
+                <div class="dropdown">
+                    <label for="languages">Languages:</label>
+                    <select id="languages">
+                        <option value="english">English</option>
+                        <option value="hindi">Hindi</option>
+                        <option value="spanish">Spanish</option>
+                    </select>
+                </div>
+            </div> -->
+
+            <!-- Social links and app buttons -->
+            <div class="social-links">
+                <strong>Social Links</strong>
+                <br>
+                <br>
+                <br>
+                <div class="social-icons">
+                    <img src="img/facbook 2.jpg" alt="Facebook">
+                    <img src="img/insta 2.png" alt="Instagram">
+                    <img src="img/twitter icon.png" alt="Twitter">
+                    <img src="img/youtube icon.png" alt="YouTube">
+                    <img src="img/linkdin icon.png" alt="LinkedIn">
+                </div>
+
+                <div class="app-buttons">
+                    <img src="img/appstore.jpg" alt="App Store">
+                    <img src="img/googleplay.jpg" alt="Google Play">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer bottom disclaimer -->
+    <hr>
+    <div class="footer-bottom">
+        <p>
+            By continuing past this page, you agree to our <a href="#">Terms of Service</a>, 
+            <a href="#">Cookie Policy</a>, 
+            <a href="#">Privacy Policy</a> and 
+            <a href="#">Content Policies</a>. All trademarks are properties of their respective owners. 
+            2008-2024 © Zomato™ Ltd. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
